@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    div{
+        width:450px;
+        height:200px;
+        margin:200px auto;
+        background: #00CA79;
+        border:3px solid #ccc;
+        text-align: center;
+        color:#fff;
+    }
+    h1{
+        color:#fff;
+        width:100%;
+        height:90%;
+        /*border-bottom:2px solid #ccc;*/
+        padding:0;
+        margin:0;
+        text-align: center;
+        line-height: 175px;
+    }
+    span{
+        font-weight:bold;
+        color:red;
+    }
+    a{
+        color:red;
+    }
+</style>
+<body>
+<div>
+    <h1><?php echo $mess ?></h1>
+    还有 <span>3</span>s进行跳转，立即跳转请点击一下链接 <a href="<?php echo $src ?>">立即跳转！</a>
+</div>
+
+</body>
+</html>
+<script>
+    let i=3;
+    let span=document.querySelector('span');
+    let a=document.querySelector('a')
+    let url=a.href;
+    a.onclick=function(e){
+        e.stopPropagation();
+        if(url=='http://localhost/bishe/login.html'){
+            top.location.href=url;
+        }else{
+            location.href=url;
+        }
+        clearInterval(tt);
+    }
+    let tt=setInterval(function(){
+        i--;
+        if(i==0){
+            if(url=='http://localhost/bishe/login.html'){
+                top.location.href=url;
+            }else{
+                location.href=url;
+            }
+            clearInterval(tt);
+        }
+        span.innerHTML=i;
+
+    },1000)
+</script>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="angular-animate/angular-animate.js"></script>
+</head>
+<style>
+    .view-animate{
+        padding:10px;
+        position: absolute;top:0;
+    }
+    .view-animate.ng-animate {
+        transition:0.5s linear all;
+    }
+    .view-animate.ng-enter {
+        opacity:0;
+    }
+    .view-animate.ng-enter.ng-enter-active {
+        opacity:1;
+    }
+    .view-animate.ng-leave {
+        opacity:1;
+    }
+    .view-animate.ng-leave.ng-leave-active {
+        opacity:0;
+    }
+</style>
+<body ng-app="myapp">
+<a href="#!/">链接一</a>
+<a href="#!/two">链接二</a>
+<a href="#!/three">链接三</a>
+<a href="#!/four">链接四</a>
+<div ng-view class="view-animate"></div>
+</body>
+</html>
+<script>
+    angular.module("myapp",["ngRoute","ngAnimate"])
+        .config(function($routeProvider){
+            $routeProvider.when('/',{
+                templateUrl:"one.html",
+            }).when("/one",{
+                templateUrl:"one.html",
+            }).when("/two",{
+                templateUrl:"two.html",
+            }).when("/three",{
+                templateUrl:"three.html",
+            }).when("/four",{
+                templateUrl:"four.html",
+            })
+        })
+//        .controller.js("one",function ($scope) {
+//        $scope.num=1
+//    }).controller.js("two",function ($scope,$routeParams) {
+//        $scope.num=$routeParams.id;
+//    }).otherwise("/");
+</script>

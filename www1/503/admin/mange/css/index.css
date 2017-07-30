@@ -1,0 +1,151 @@
+header {
+  height: 80px;
+  width: 100%;
+  background: #0083BF; }
+  header div.logo {
+    height: 80px;
+    width: 90px;
+    background-image: url(../image/logo.png);
+    background-size: contain;
+    float: left;
+    margin-left: 23px;
+    margin-right: 23px; }
+  header div.top {
+    padding: 16px 0 0 6px;
+    height: 21px;
+    color: #fff; }
+    header div.top span.gang {
+      color: #C2C2C2;
+      padding: 0 4px; }
+    header div.top p.top-l {
+      float: left; }
+    header div.top div.top-r {
+      float: right;
+      position: relative; }
+    header div.top a {
+      color: #fff;
+      font-size: 12px; }
+  header ul.top-two {
+    display: block;
+    height: 34px;
+    position: relative;
+    bottom: -10px;
+    right: 0;
+    color: #fff; }
+    header ul.top-two li {
+      background-position: right top;
+      padding: 0 15px 0 7px;
+      background-image: url(../image/nav_bg.png);
+      background-size: auto 214%;
+      height: 34px;
+      width: auto;
+      float: left;
+      line-height: 38px;
+      font-size: 14px;
+      font-weight: 700;
+      width: 60px;
+      text-align: center;
+      margin-left: 10px; }
+    header ul.top-two li.first {
+      background-position-y: 34px;
+      color: #3A6EA5;
+      background-size: auto 225%; }
+
+section.main {
+  width: 100%;
+  height: 531px; }
+  section.main div.left-m {
+    width: 10.7%;
+    height: 580px;
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #F7FBFC;
+    float: left; }
+    section.main div.left-m div {
+      margin-top: 10px;
+      position: absolute;
+      top: 0;
+      left: 12px;
+      display: none; }
+      section.main div.left-m div dt {
+        font-weight: 700;
+        color: #275d96;
+        border-bottom: 1px solid #d9e4ea;
+        line-height: 24px;
+        height: 24px;
+        width: 135px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        position: relative; }
+        section.main div.left-m div dt div {
+          text-decoration: none;
+          margin-right: 6px;
+          cursor: pointer;
+          display: block;
+          margin-left: 90px;
+          float: right;
+          border: 6px solid #F7FBFC;
+          border-top: 6px solid #B3C4C3;
+          margin-top: 8px; }
+        section.main div.left-m div dt div.click {
+          border: 8px solid #F7FBFC;
+          border-left: 8px solid #B3C4C3; }
+      section.main div.left-m div dd {
+        line-height: 30px;
+        padding-left: 8px;
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        width: 100px;
+        height: 30px; }
+        section.main div.left-m div dd a {
+          display: block;
+          width: 100%;
+          height: 100%; }
+      section.main div.left-m div dd.down-btn {
+        background-image: url(../image/left_menu.png);
+        padding-left: 24px;
+        width: 110px; }
+      section.main div.left-m div dd.bg:hover {
+        background: #E2E9EA; }
+    section.main div.left-m div.first {
+      display: block; }
+  section.main div.right-m {
+    width: 89.3%;
+    height: 580px;
+    background: #E2E9EA;
+    float: left; }
+    section.main div.right-m div.center {
+      width: 2%;
+      height: 531px;
+      float: left;
+      margin-right: 4px; }
+      section.main div.right-m div.center div {
+        margin-top: 265px;
+        border: 6px solid #E2E9EA;
+        border-right: 6px solid #75736E; }
+    section.main div.right-m .crumbs {
+      padding-top: 16px;
+      box-sizing: border-box; }
+      section.main div.right-m .crumbs span {
+        float: left;
+        font-size: 12px; }
+      section.main div.right-m .crumbs a {
+        float: right;
+        width: 52px;
+        height: 20px;
+        font-size: 12px;
+        text-align: center;
+        display: block;
+        background: #fff;
+        color: #000;
+        line-height: 24px;
+        border: 1px solid #CCCDD7;
+        border-radius: 5px;
+        margin-right: 6px;
+        margin-bottom: 6px; }
+    section.main div.right-m iframe {
+      float: left; }

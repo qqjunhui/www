@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="{$smarty.const.CSS_PATH}/mui.min.css">
+    <script src="{$smarty.const.JS_PATH}/jquery.js"></script>
+
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a onclick="history.go(-1)"  class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">商品详情</h1>
+</header>
+<form method="post" action="index.php?m=index&f=backshop&a=changecomcom" class="mui-input-group" style="margin-top: 45px;">
+    <div class="mui-input-row">
+        <label >商品图片</label>
+        <img src="{$arr[0]['coimg']}" alt="" height="100%" style="margin-left: 20px">
+        <label >
+            <a href="index.php?m=index&f=backshop&a=changecomimg&coid={$arr[0]['coid']}">点击修改</a>
+        </label>
+
+    </div>
+    <div class="mui-input-row">
+        <label>商品名称</label>
+        <input name="coname" type="text" class="mui-input-clear" value="{$arr[0]['coname']}">
+    </div>
+    <div class="mui-input-row">
+        <label>商品价格</label>
+        <input name="coprice" required type="text" class="mui-input-clear" value="{$arr[0]['coprice']}">
+    </div>
+    <div class="mui-input-row">
+        <label>简介</label>
+        <input name="conote" required type="text" class="mui-input-clear" value="{$arr[0]['conote']}">
+        <input type="hidden" name="coid" value="{$arr[0]['coid']}">
+    </div>
+
+    <div class="mui-input-row">
+        <label>推荐位</label>
+        <select name="srec" >
+            <option value="3">猜你喜欢</option>
+            <option value="4">新品推荐</option>
+            <option value="5">当下热门</option>
+        </select>
+    </div>
+    <div class="mui-input-row" style="text-align: center" >
+        <button type="submit" value="修改" class="mui-btn mui-btn-primary" style="float: none; display: inline-block" >修改</button>
+    </div>
+</form>
+
+</body>
+</html>

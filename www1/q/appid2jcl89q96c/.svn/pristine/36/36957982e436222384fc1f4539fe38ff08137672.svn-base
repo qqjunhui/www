@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>buy</title>
+	</head>
+	<script src="{JS_PATH}/common.js"></script>
+	<script src="{JS_PATH}/jquery.js"></script>
+	<script src="{JS_PATH}/iscroll.js"></script>
+	<link rel="stylesheet" href="{CSS_PATH}/common.css" />
+	<link rel="stylesheet" href="{CSS_PATH}/zhc-buy.css" />
+	<body>
+		<header>
+			<img src="{IMG_PATH}/zhc-img/images/icon_03.png" alt="" />
+			<img src="{IMG_PATH}/zhc-img/images/buyhead_03.png" alt="" />
+			<img src="{IMG_PATH}/zhc-img/images/buyhead_05.png" alt="" />
+		</header>
+		<main class="container">
+			
+		
+			<section>
+				<ul class="list">
+					{foreach $result as $v}
+				<li>
+					<div class="img_box">
+						<img src="{IMG_PATH}/zhc-img/images/food_14.png"/>
+					</div>
+					<div class="word_box">
+						<div class="title">{$v['coname']}</div>
+						<div class="buybox">
+							<div class="buyboxs1">
+								<input type="text" name="num" value="{$num}"/>
+							</div>
+							<div class="buyboxs">
+								<div class="tiaos"></div>
+								<div class="buymoney">
+									<img src="{IMG_PATH}{$v['coimg']}" alt="" />
+									<span>558</span>
+									<span>{$v['coprice']}RMB</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="buy_money">
+						{$v['coprice']}
+					</div>
+				</li>
+				<!--<li>-->
+					<!--<div class="img_box">-->
+						<!--<img src="{IMG_PATH}/zhc-img/images/food_14.png"/>-->
+					<!--</div>-->
+					<!--<div class="word_box">-->
+						<!--<div class="title">Noodleswithgravy</div>-->
+						<!--<div class="buybox">-->
+							<!--<div class="buyboxs1">-->
+								<!--<input type="text" name="num" value="01"/>-->
+							<!--</div>-->
+							<!--<div class="buyboxs">-->
+								<!--<div class="tiaos"></div>-->
+								<!--<div class="buymoney">-->
+									<!--<img src="{IMG_PATH}/zhc-img/images/buy_03.png" alt="" />-->
+									<!--<span>558</span>-->
+									<!--<span>33.00RMB</span>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="buy_money">-->
+						<!--33.00-->
+					<!--</div>-->
+				<!--</li>-->
+				<!--<li>-->
+					<!--<div class="img_box">-->
+						<!--<img src="{IMG_PATH}/zhc-img/images/food_14.png"/>-->
+					<!--</div>-->
+					<!--<div class="word_box">-->
+						<!--<div class="title">Noodleswithgravy</div>-->
+						<!--<div class="buybox">-->
+							<!--<div class="buyboxs1">-->
+								<!--<input type="text" name="num" value="01"/>-->
+							<!--</div>-->
+							<!--<div class="buyboxs">-->
+								<!--<div class="tiaos"></div>-->
+								<!--<div class="buymoney">-->
+									<!--<img src="{IMG_PATH}/zhc-img/images/buy_03.png" alt="" />-->
+									<!--<span>558</span>-->
+									<!--<span>33.00RMB</span>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="buy_money">-->
+						<!--33.00-->
+					<!--</div>-->
+				<!--</li>-->
+					{/foreach}
+			</ul>
+			<section class="sum">
+				<div class="buy_money">
+					<div class="number">
+						<span>89.00</span>
+						<span>RMB</span>
+					</div>
+					<div class="jian">
+						<p>
+							<span>..</span>
+							<span>35.00</span>
+						</p>
+						<p>系统已自动为您减价</p>
+					</div>
+				</div>
+			</section>
+			<article class="dingdanmess">
+				<ul>
+					<li class="dingdanhao">
+						{$danhao}
+					</li>
+					<li class="active">
+						<div>即刻配送</div>
+					</li>
+					<li class="times">
+						<div>15:30</div>
+					</li>
+					<li class="address">
+						<p>{$address}</p>
+						<img src="{IMG_PATH}/zhc-img/images/more_06.png" alt="" />
+					</li>
+					<li class="zhifu">
+						<div>货到付款</div>
+					</li>
+					<li class="zfbtn">
+						<a href="index.php?m=index&f=buy&a=end">
+							<img src="{IMG_PATH}/zhc-img/images/buybtn_14.png" alt="" />
+						</a>
+					</li>
+				</ul>
+			</article>
+			</section>
+		</main>
+	</body>
+</html>
+<script>
+	window.onload=function(){
+
+
+
+	    var num=parseInt($(".buyboxs1 input").val())*parseInt($('.buy_money').text())-parseInt($(".jian p span").last().text());
+	    if (num*1<0){
+	        num=0
+		}
+		console.log(num);
+	    $('.number span').first().html(num)
+		myScroll = new IScroll('.container', {
+		        mouseWheel: true,
+		        scrollX:true,
+		        shrinkScrollbars: 'scale',
+		        fadeScrollbars: true,
+		   });
+		   $("header img").first().on("touchend",function(){
+		   		window.history.back();
+		   })
+	}
+</script>

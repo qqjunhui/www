@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>par</title>
+	</head>
+	<script src="{JS_PATH}/common.js"></script>
+	<script src="{JS_PATH}/jquery.js"></script>
+	<link rel="stylesheet" href="{CSS_PATH}/common.css" />
+	<link rel="stylesheet" href="{CSS_PATH}/zhc-par.css" />
+	<body>
+		<header>
+			<img src="{IMG_PATH}/qyh-img/q-back.png"/>
+		</header>
+		<main>
+			<div class="zhifubox">
+				<h3>第三方  支付筛选</h3>
+				<p>DISANFANGZHIFUSHAIXUAN</p>
+				<div class="select">
+					<img src="{IMG_PATH}/zhc-img/images/vx_03.png" alt="" />
+					<img src="{IMG_PATH}/zhc-img/images/vx_05.png" alt="" />
+				</div>
+				<div class="zhifutitle"></div>
+				<div class="zflist">
+					<a href="javascript:;" style="display: block; width: 100%;height: 100%;">
+						<div class="zfhead">
+							<img src="{IMG_PATH}/zhc-img/images/zfhead_14.png" alt="" />
+						</div>
+						<div class="zflist_word">
+							<div>选择银行卡完成支付(暂未开通)</div>
+							<div>使用银行卡完成支付 <span>上次使用过招商银行卡</span></div>
+						</div>
+						<div class="zfnum">
+							0
+						</div>
+					</a>
+				</div>
+				<div class="zflist">
+					<div class="zfhead">
+						<img src="{IMG_PATH}/zhc-img/images/zfa_14.png" alt="" />
+					</div>
+					<div class="zflist_word">
+						<div>本地钱包完成支付（暂未开通）</div>
+						<div>本地钱包可享受更多折扣 <span>购物后即享优惠</span></div>
+					</div>
+					<div class="zfnums"></div>
+				</div>
+				<div class="zflist">
+					<div class="zfhead">
+						<img src="{IMG_PATH}/zhc-img/images/zfa_17.png" alt="" />
+					</div>
+					<a href="index.php?m=index&f=buy&a=success" class="zflist_word">
+						<div>货到付款</div>
+						<div>收货时完成付款<span>部分产品加收配送费用 </span></div>
+					</a>
+					<div class="zfnums"></div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+<script>
+	$("header img").on("touchend",function(){
+   		window.history.back();
+   })
+</script>

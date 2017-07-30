@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{$smarty.const.CSS_PATH}/bootstrap.min.css">
+</head>
+<style>
+    th{
+        text-align: center;
+    }
+</style>
+<body>
+<table  class="table table-striped" style="margin-top: 10px; margin-left: 10px;">
+    <tr>
+        <th>缩略图</th>
+        <th>分类名</th>
+        <th>英文分类名</th>
+        <th>操作</th>
+    </tr>
+    {foreach $arr as $v}
+    <tr style="text-align: center">
+        <td><img src="{$v['limg']}" style="width: 40px;" alt=""></td>
+        <td>{$v["lname"]}</td>
+        <td>{$v["lename"]}</td>
+        <td><a href="index.php?m=admin&f=addRole&a=listCon&lid={$v['lid']}"><button type="button" class="btn btn-warning">更改</button></a></td>
+    </tr>
+    {/foreach }
+</table>
+</body>
+
+</html>

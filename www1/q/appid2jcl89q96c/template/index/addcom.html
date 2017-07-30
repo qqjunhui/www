@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加商品</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{$smarty.const.CSS_PATH}/mui.min.css">
+    <script src="{$smarty.const.JS_PATH}/jquery.js"></script>
+    <script src="{$smarty.const.JS_PATH}/uploadimg.js"></script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a onclick="history.go(-1)"  class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">添加商品</h1>
+</header>
+
+<form method="post" action="index.php?m=index&f=backshop&a=addcomcom" class="mui-input-group" style="margin-top: 45px;">
+    <div class="mui-input-row">
+        <label>商品名称</label>
+        <input name="cname" type="text" class="mui-input-clear" value="">
+    </div>
+    <div class="mui-input-row">
+        <div class="inpimgbox">
+            <label >上传图片</label>
+            <div class="inputbox"></div>
+            <input type="hidden" name="cimg" class="cimg" value="">
+        </div>
+    </div>
+    <div class="mui-input-row">
+        <label>中文简介</label>
+        <input name="cnotes" required type="text" class="mui-input-clear" value="">
+    </div>
+    <div class="mui-input-row">
+        <label>商品价格</label>
+        <input name="cprice" required type="text" class="mui-input-clear" value="">
+    </div>
+    <div class="mui-input-row">
+        <label>商品分类</label>
+        <select name="slid">
+            {foreach $arr as $v}
+            <option value="{$v['slid']}">{$v['slname']}</option>
+            {/foreach}
+        </select>
+    </div>
+    <div class="mui-input-row" style="text-align: center">
+        <button type="submit" class="mui-btn mui-btn-primary" style="float: none; display: inline-block" >添加</button>
+    </div>
+</form>
+</body>
+</body>
+<style>
+    .inpimgbox{
+        width:100%;
+        height:100%;
+        /*background-color: red;*/
+    }
+    .inputbox{
+        width:80px;
+        height:40px;
+        float: right;
+        position: relative;
+    }
+</style>
+<script>
+    $(function () {
+        $("button").click(function () {
+            var sname=$("input[name='sname']").val();
+            var saddress=$("input[name='saddress']").val();
+            var snotes=$("input[name='snotes']").val();
+            var senotes=$("input[name='senotes']").val();
+            var lid=$("input[name='lid']").val();
+        });
+        var obj=new upload_1();
+        var inputBox=document.querySelector(".inputbox");
+        obj.box=document.querySelector(".inpimgbox");
+        obj.uploadBtnStyle={ width:50,height:30  };
+
+        obj.createView("",inputBox);
+        obj.success=function (url) {
+            document.querySelector(".cimg").value=url;
+        }
+    })
+</script>
+</html>

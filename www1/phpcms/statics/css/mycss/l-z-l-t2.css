@@ -1,0 +1,68 @@
+
+
+.z-banner {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  top: 0;
+  left: 0; }
+
+.z-banner .tutu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.z-banner .tutu:nth-child(1){
+  background-image: url("../../images/img/qbanner1.png");
+  background-size: cover;
+  background-position: center center;
+}
+.z-banner .tutu:nth-child(2){
+  background-image: url("../../images/img/qbanner2.png");
+  background-size: cover;
+  background-position: center center;
+}
+.z-banner .tutu:nth-child(3){
+  background-image: url("../../images/img/qbanner3.png");
+  background-size: cover;
+  background-position: center center;
+}
+.z-banner .tutu:nth-child(4){
+  background-image: url("../../images/img/qbanner4.png");
+  background-size: cover;
+  background-position: center center;
+}
+.z-banner .first-two {
+  opacity: 1; }
+
+.diandian {
+  width: 164px;
+  height: 6px;
+  position: absolute;
+  left: 50%;
+  margin-left: -82px;
+  bottom: 33px; }
+
+.diandian .changtiao {
+  width: 31px;
+  height: 100%;
+  float: left;
+  margin-right: 10px;
+  box-sizing: border-box;
+  border: 1px solid #b9b9b9; }
+
+.diandian .first-one {
+  background: white;
+  border: 0; }
+
+
+.z-banner .tutu .qbanner1 {
+  width: 100%;
+  display: block;
+  height: 100%; }

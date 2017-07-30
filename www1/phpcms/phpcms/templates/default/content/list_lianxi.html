@@ -1,0 +1,24 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}mycss/z-connect.css"/>
+<script src="{JS_PATH}myjs/z-l-t.js"></script>
+<div style="height:400px">
+    <div class="z-banner">
+        <a class="first-two tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="diandian">
+            <div class="first-one changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+        </a>
+    </div>
+</div>
+</div>
+{pc:content  action="lists" siteid="$siteid" catid="$catid" order="listorder ASC" num="25" moreinfo="1"}
+{loop $data $v}
+{$v[content]}
+{/loop}
+{/pc}
+{template "content","footer"}

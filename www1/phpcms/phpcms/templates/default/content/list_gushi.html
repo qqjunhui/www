@@ -1,0 +1,45 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}mycss/l-ppgs.css">
+<!--<link rel="stylesheet" href="{CSS_PATH}mycss/ljbbb.css">-->
+<script src="{JS_PATH}myjs/z-l-t.js"></script>
+<script src="{JS_PATH}myjs/lz-l-t.js"></script>/
+<div style="height:400px" class="hidden-xs hidden-sm hidden-md">
+    <div class="z-banner">
+        <a class="first-two tutu"></a>
+        <a class="tutu"> </a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <div class=" hidden-xs hidden-sm hidden-md dingwei1" >
+            <input class="z-nav-4" type="text">
+            <span class=" z-nav-s">&#xe759;</span>
+        </div>
+        <a class="diandian">
+            <div class="first-one changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+        </a>
+    </div>
+</div>
+<div style="height:400px" class="hidden-lg">
+    <div class="z-banner2 ">
+        <a class="first-two tutu2"></a>
+        <a class="tutu2"></a>
+        <a class="tutu2"></a>
+        <a class="tutu2"></a>
+        <a class="diandian2">
+            <div class="first-one changtiao2"></div>
+            <div class="changtiao2"></div>
+            <div class="changtiao2"></div>
+            <div class="changtiao2"></div>
+        </a>
+    </div>
+</div>
+</div>
+{pc:content  action="lists" siteid="$siteid" catid="$catid" order="listorder ASC" num="25" moreinfo="1"}
+{loop $data $v}
+{$v[content]}
+{/loop}
+{/pc}
+
+{template "content","footer"}

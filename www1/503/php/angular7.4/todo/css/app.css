@@ -1,0 +1,27 @@
+.mui-bar{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+.mui-table-view{
+    margin-top:44px;
+}
+.mui-icon-compose{
+    float: right;
+}
+.mui-table-view-cell{
+    position: relative;
+    background: #fff;
+}
+.mui-navigate-right::after{
+    background: #fff;
+    z-index: 1;
+    width:20px;height:20px;
+}
+.mui-icon-trash{
+    position: absolute;
+    right:14px;
+    top:9px;
+    z-index: -1;
+}

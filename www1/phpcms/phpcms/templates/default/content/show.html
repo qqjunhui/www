@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>祖宗</h3>
+    {pc:content  action="lists" siteid="$siteid" catid="$catid" order="listorder ASC" num="25"}
+    <?php var_dump($data)?>
+        <div>
+            <p>
+                {$title}
+            </p>
+        </div>
+        <div>
+            <p>
+                {loop $keywords $v}
+                     {$v}
+                {/loop}
+            </p>
+        </div>
+        <div>
+            <p>
+                {$description}
+            </p>
+        </div>
+        <div>
+            <p>
+                {$description}
+            </p>
+        </div>
+    {/pc}
+</body>
+</html>

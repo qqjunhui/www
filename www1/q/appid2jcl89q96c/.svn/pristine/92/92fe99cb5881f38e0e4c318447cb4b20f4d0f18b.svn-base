@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+	</head>
+	<script src="{JS_PATH}/common.js"></script>
+	<script src="{JS_PATH}/jquery.js"></script>
+	<link rel="stylesheet" href="{CSS_PATH}/common.css" />
+	<link rel="stylesheet" type="text/css" href="{CSS_PATH}/zhc-success.css"/>
+	<body>
+		<header>
+			<img src="{IMG_PATH}/zhc-img/images/fitelbtn_02.png" alt="" />
+		</header>
+		<section class="success-back">
+			<p>2675899029</p>
+			<p>80</p>
+		</section>
+		<section class="success-btn">
+			<a href="index.php" style="display: block;width: 100%;height: 100%;"></a>
+		</section>
+	</body>
+</html>
+<script>
+	$("header img").first().on("touchend",function(){
+   		window.history.back();
+   })
+</script>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录</title>
+    <link href="static/css/bootstrap.css" rel="stylesheet" />
+    <link href="static/css/font-awesome.css" rel="stylesheet" />
+</head>
+<style>
+    h5{
+        font-size:18px;
+        font-family:微软雅黑;
+    }
+    h5 >img{
+        width:80px;
+    }
+   .btn-primary{
+       margin-left:115px;
+       margin-top:20px;
+       width:110px;
+
+   }
+    .form-control.yzm{
+        width:215px;
+        margin-right:14px
+    }
+</style>
+<body style="background-color: #E2E2E2;">
+    <div class="container">
+        <div class="row text-center " style="padding-top:100px;">
+            <div class="col-md-12">
+                <!--<img src="img/logo-invoice.png" />-->
+            </div>
+        </div>
+         <div class="row ">
+               
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+
+                <div class="panel-body">
+                    <form action="login/main.php" method="post">
+                        <hr />
+                        <h5><img src="static/img/logo.png" alt="">千医千村牵手帮扶系统管理端</h5>
+                        <br/>
+                        <div class="form-group input-group">
+                                <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
+                                <input type="text" class="form-control" placeholder="用户名 " name="user" required/>
+                        </div>
+                        <div class="form-group input-group">
+                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
+                            <input type="password" class="form-control"  placeholder="密码" name="pass" required/>
+                        </div>
+                        <div class="form-group input-group">
+                            <input type="text" class="form-control yzm" name="yzm" placeholder="验证码" />
+                            <img src="login/yzm.php" alt="" onclick="this.src='login/yzm.php?abx='+Math.random()"/>
+                        </div>
+                        <input type="submit" class="btn btn-primary ">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

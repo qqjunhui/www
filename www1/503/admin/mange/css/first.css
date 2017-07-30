@@ -1,0 +1,46 @@
+body {
+  background: #fff; }
+
+div.main {
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden; }
+  div.main > div {
+    width: 95%;
+    height: auto;
+    border: 1px solid #c7d8ea;
+    zoom: 1;
+    margin: 10px auto; }
+    div.main > div h6 {
+      border-bottom: 1px solid #c7d8ea;
+      color: #3a6ea5;
+      background: url(../images/admin_img/x_bg.png) repeat-x left -42px;
+      height: 26px;
+      line-height: 28px;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 26px; }
+    div.main > div p {
+      padding: 10px; }
+    div.main > div p:first-child {
+      border-bottom: 1px dotted #ccc; }
+
+.nav {
+  padding: 10px 0; }
+  .nav > div {
+    width: 100%;
+    height: 5px;
+    border-bottom: 1px solid #ccc; }
+
+table {
+  width: 100%;
+  height: auto; }
+  table tr {
+    height: 50px; }
+    table tr td {
+      border-bottom: 1px solid #ccc; }
+    table tr td:first-child {
+      width: 15%; }
+
+button {
+  margin-top: 20px; }

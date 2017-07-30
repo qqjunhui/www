@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src='jquery.js'></script>
+	</head>
+	<body>
+		<form action="index.php" method='get'>
+			账号：<input type="text" name='zh'/>
+			密码：<input type="password" name='mm'/>
+			<button>提交</button>
+		</form>
+	</body>
+</html>
+<script type="text/javascript">
+	
+	function ajax({url,type='get',data='',dataType='text',success,async='true',user='',password=''}){
+		if(typeof data===Object){//判断传进来的数据是否是对象
+			let json='';//附一个变量
+			for(let i in data){//遍历data这个对象
+				json+=i+'='+data[i]+'&';//把data对象的属性名和属性值用
+			}
+			data=json.slice(0,-1);
+		}
+		console.log(data);
+		let ajax=new XMLHttpRequest();
+		if(type=='get'){
+			ajax.open('get',url+'?'+data,async);
+			ajax.send(null);
+		}else if(type==='post'){
+			ajax.open('get',url,async);
+			ajax.setRequestHeader('Context-Type','application/x-www-form-urlencoded');
+			ajax.send(data);
+		}
+		ajax.onreadystatechange=function(){
+			if(ajax.readyState===4){
+				if(ajax.status===200){
+					if(dataType==='text'){
+						success(ajax.responseText);
+					}else if(dataType==='json'){
+						success(JSON.parse(ajax.response));
+					}else if(dataType==='xml'){
+						success(ajax.responseXML);
+					}
+				}else if(ajax.status===404){
+					alert('没有找到页面！')
+				}else{
+					alert('连接失败！')
+				}
+			}
+		}
+		
+	}
+	$('button').click(function(){
+		$('form').submit(function(e){
+			e.preventDefault();
+		})
+		let zh=$(':text').val();
+		
+		let mm=$(':password').val();
+		ajax({
+			url:"index.php",
+			type:"post",
+			data:{zh:zh,mm:mm},
+			dataType:'text',
+			success:function(val){
+				console.log(val);
+			},
+			async:true,
+		});
+//		$.ajax({
+//			type:"get",
+//			url:"index.php",
+//			data:{zh:zh,mm:mm},
+//			dataType:'text',
+//			success:function(val){
+//				console.log(val);
+//			}
+//		});
+	})
+	
+</script>

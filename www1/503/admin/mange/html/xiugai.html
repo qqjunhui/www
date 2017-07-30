@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>修改密码</title>
+		<link rel="stylesheet" href="../css/first.css" />
+		<script src='../js/jquery.js'></script>
+		<script src='../js/jquery.validate.js'></script>
+	</head>
+	<body>
+		<div class="nav">
+			<div></div>
+		</div>
+		<form action="" id='personal'>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td>用户名</td>
+					<td>千医千村牵手管理员</td>
+				</tr>
+				
+				<tr>
+					<td>E-mail</td>
+					<td><input type="email" name='email' placeholder="请输入邮箱" autofocus="autofocus"/></td>
+				</tr>
+				<tr>
+					<td>旧密码</td>
+					<td>
+						<input type="password" name='oldmm'/>
+					</td>
+				</tr>
+				<tr>
+					<td>新密码</td>
+					<td>
+						<input type="password" name='newmm'/>
+					</td>
+				</tr>
+				<tr>
+					<td>再次新密码</td>
+					<td>
+						<input type="password" name='repeatmm' />
+					</td>
+				</tr>
+			</table>
+			<button type='submit'>提交</button>
+		</form>
+	</body>
+</html>
+<script>
+	$('#personal').validate({
+		rules: {
+			email: {
+				required: true,
+				email: true,
+			},
+			oldmm:{
+				required:true,
+				rangelength:[6,18]
+			},
+			newmm: {
+				required:true,
+				rangelength:[6,18],
+			},
+			repeatmm: {
+				required:true,
+				rangelength:[6,18],
+				equalTo: "#newmm"
+			}
+		},
+		messages: {
+			oldmm: {
+				required:'请输入新的密码',
+				rangelength: $.validator.format("请输入长度在 {0} 到 {1} 之间的密码"),
+			},
+			newmm:{
+				required:'请输入新的密码',
+				rangelength: $.validator.format("请输入长度在 {0} 到 {1} 之间的密码"),
+			},
+			repeatmm: {
+				required: "请输入确认密码",
+				minlength: "请输入长度在 {0} 到 {1} 之间的密码",
+				equalTo: "两次输入密码不一致"
+			},
+			email: {
+				required: "请输入Email地址",
+				email: "请输入正确的email地址",
+			},
+		},
+		errorElement:'span',
+		errorPlacement:function(error,val){
+			error.css({'color':'red','font-size':'12px',}).insertAfter(val)
+		},
+		success:function(val,vv){
+			if($(vv).next('i').length==0){
+				$('<i>').html('ok').insertAfter(vv);
+			}
+		}
+	})
+</script>

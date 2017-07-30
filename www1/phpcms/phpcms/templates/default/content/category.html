@@ -1,0 +1,134 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}mycss/l-z-l-t2.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}mycss/l-normalize.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}mycss/l-component.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}mycss//l-demo.css" />
+<link rel="stylesheet" href="../phpcms/statics/css/mycss/l-tsms.css">
+<script src="{JS_PATH}myjs/lz-l-t.js"></script>
+<div style="height:400px">
+    <div class="z-banner">
+        <a class="first-two tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="diandian">
+            <div class="first-one changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+        </a>
+    </div>
+</div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 aa col-sm-12 aa">
+            <span class="bb">RECOMMENDED CHARACTERISICS</span>
+            <p class="l-c">特 / 色 / 推 / 荐</p>
+            <div class="l-cc">
+                <div class='cs'></div>
+            </div>
+            <p class="l-s">OURT SIGNATURE DISHES</p>
+        </div>
+        <div class="col-lg-12 bbb hidden-xs">
+            <div class="ljb-qqq">
+                {pc:content  action="category" siteid="$content"  catid="$catid" order="listorder ASC" num="25" moreinfo="1"}
+                <?php $i=0?>
+                {loop $data $v}
+                <?php if($i==0):?>
+                <p class="l-pp first">{$v[catname]}</p>
+                <?php else:?>
+                <p class="l-pp">{$v[catname]}</p>
+                <?php endif;?>
+                <?php $i++?>
+                {/loop}
+                {/pc}
+            </div>
+        </div>
+        <div class="olm sss">
+            {pc:content  action="lists" siteid="$content" moreinfo="1" catid="21" order="listorder ASC" num="25"}
+            {loop $data $v}
+            <div class="col-lg-4 col-sm-6 bbbb diyi">
+                <div class="grid">
+                    <figure class="effect-oscar fg">
+                        <div class='l-k'>
+                            <img src="{$v[thumb]}" alt="" >
+                        </div>
+                        <figcaption>
+                            <h2>{$v[one]} <span>{$v[two]}</span></h2>
+                            <p>{$v[three]}<br>{$v[four]}</p>
+                            <a href="{$v[url]}" target="_blank">View more</a>
+                        </figcaption>
+                    </figure>
+                    <div class="lop">
+                        <p class="l-one">{$v[title]}</p>
+                        <p class="l-two">{$v[english]}</p>
+                        <p class="l-three">CERTUFED</p>
+                    </div>
+                </div>
+            </div>
+            {/loop}
+            {/pc}
+        </div>
+        <div class="olm">
+            {pc:content  action="lists" siteid="$content" moreinfo="1" catid="22" order="listorder ASC" num="25"}
+            {loop $data $v}
+            <div class="col-lg-4 col-sm-6 bbbb diyi">
+                <div class="grid">
+                    <figure class="effect-oscar fg">
+                        <div class='l-k'>
+                            <img src="{$v[thumb]}" alt="" >
+                        </div>
+                        <figcaption>
+                            <h2>{$v[one]} <span>{$v[two]}</span></h2>
+                            <p>{$v[three]}<br>{$v[four]}</p>
+                            <a href="{$v[url]}" target="_blank">View more</a>
+                        </figcaption>
+                    </figure>
+                    <div class="lop">
+                        <p class="l-one">{$v[title]}</p>
+                        <p class="l-two">{$v[english]}</p>
+                        <p class="l-three">CERTUFED</p>
+                    </div>
+                </div>
+            </div>
+            {/loop}
+            {/pc}
+        </div>
+        <div class="olm">
+            {pc:content  action="lists" siteid="$content" moreinfo="1" catid="23" order="listorder ASC" num="25"}
+            {loop $data $v}
+            <div class="col-lg-4 col-sm-6 bbbb diyi">
+                <div class="grid">
+                    <figure class="effect-oscar fg">
+                        <div class='l-k'>
+                            <img src="{$v[thumb]}" alt="" >
+                        </div>
+                        <figcaption>
+                            <h2>{$v[one]} <span>{$v[two]}</span></h2>
+                            <p>{$v[three]}<br>{$v[four]}</p>
+                            <a href="{$v[url]}" target="_blank">View more</a>
+                        </figcaption>
+                    </figure>
+                    <div class="lop">
+                        <p class="l-one">{$v[title]}</p>
+                        <p class="l-two">{$v[english]}</p>
+                        <p class="l-three">CERTUFED</p>
+                    </div>
+                </div>
+            </div>
+            {/loop}
+            {/pc}
+        </div>
+    </div>
+</div>
+<div class="col-lg-12 boo col-sm-12 boo">
+    <div class="po">
+        <p class="lkj">那些回忆,值得细细品尝和回味</p>
+        <p class="lkh">Those memories, it is worth savoring the aftertaste</p>
+        <p class="lkg">With the wireless</p>
+    </div>
+</div>
+{template "content","footer"}

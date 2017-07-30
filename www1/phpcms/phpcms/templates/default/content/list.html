@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>这是list</h2>
+<?php $catid ?>
+{pc:content  action="lists" siteid="$siteid" catid="$catid" order="listorder ASC" num="25"}
+<?php var_dump($data)?>
+    {loop $data $v}
+        <a href="{$v['url']}">{$v[title]}</a>
+    {/loop}
+{/pc}
+</body>
+</html>

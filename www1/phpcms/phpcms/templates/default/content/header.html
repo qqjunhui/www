@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="{CSS_PATH}mycss/bootstrap.css" />
+    <link rel="stylesheet" href="{CSS_PATH}mycss/common.css">
+    <link rel="stylesheet" href="{CSS_PATH}mycss/header.css" />
+    <script src='{JS_PATH}myjs/jquery.js'></script>
+    <script src='{JS_PATH}myjs/bootstrap.js'></script>
+</head>
+<body>
+
+
+<ul>
+    <li>
+        <a class="nav-div-a" href="{siteurl($siteid)}">首页</a>
+    </li>
+    {pc:content  action="category" siteid="$siteid" catid="0" order="listorder ASC" num="25"}
+    {loop $data $v}
+    <li>
+    <a  class="nav-div-a" href="{$v['url']}">
+    {$v[catname]}
+    </a>
+    </li>
+    {/loop}
+    {/pc}
+</ul>
+
+
+<div class="container-fluid">
+    <div class="container-fluid backg">
+        <div class="container">
+            <div class="row">
+                <div class="z-nav hidden-xs hidden-sm hidden-md col-lg-12">
+                    {pc:content  action="category" siteid="$content" catid="0" order="listorder ASC" num="10"}
+                    <a class="<?php if(!$catid):?> first <?php endif;?>" href="{siteurl($siteid)}">首页</a>
+                    {/pc}
+                    <?php $i=0?>
+                    {loop $data $v}
+                    <a href="{$v[url]}" class="<?php if($catid==$v[catid]):?> first <?php endif;?>">{$v[catname]}</a>
+                    <?php if($i==2):?>
+                    <img src="{IMG_PATH}img/logo.png" alt=""/>
+                    <?php endif;?>
+                    <?php $i++?>
+                    {/loop}
+                    {/pc}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid backgr hidden-lg">
+        <div class="row backgro">
+            <div class="col-xs-2 col-sm-2 col-md-2 hidden-lg z-img-box">
+                <img src="{IMG_PATH}img/qbailogo.png" class=" z-nav-1">
+            </div>
+            <div class="col-xs-8 col-sm-8 col-md-8 hidden-lg dingwei" >
+                <input class="z-nav-2" type="text">
+                <span class="hidden-lg z-nav-g">&#xe759;</span>
+            </div>
+
+            <div class="col-xs-2 col-sm-2 col-md-2 hidden-lg z-nav-3">&#xe66b;</div>
+        </div>
+    </div>
+</div>

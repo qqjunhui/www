@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<style>
+    ul,li{
+        list-style: none;
+    }
+    .opt{
+        width:10px;
+        height:10px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        display: inline-block;
+
+    }
+    .red{
+        background: red;
+    }
+</style>
+<body>
+<div class="vue">
+    <div class="box">
+        <input type="text" @keydown.13="add()" v-model="text">
+        <ul>
+            <li v-for="item in datas">
+                <span class="opt" @click="change(item.id,item.status)" :class="{red:item.status==1}"></span>
+                <span>{{item.con}}</span>
+                <span @click="del(item.id)">删除</span>
+            </li>
+        </ul>
+        <input type="button" value="全部计划" @click="changeState('all')">
+        <input type="button" value="已完成计划" @click="changeState('1')">
+        <input type="button" value="未完成计划"  @click="changeState('0')">
+    </div>
+</div>
+</body>
+</html>
+<script>
+    new Vue({
+        el:".vue",
+        data:{
+            text:"",
+            all:[],
+            state:"all",
+        },
+        methods:{
+            add:function () {
+                var obj={};
+                obj.id=1000*Math.random()+new Date().getTime();
+                obj.con=this.text;
+                obj.status=0;
+                this.all.push(obj);
+                this.text="";
+            },
+            change:function (id,status) {
+                if(status==0){
+                    this.all=this.all.filter(function (val) {
+                        if(val.id==id){
+                            val.status=1
+                        }
+                        return val;
+                    })
+                }else{
+                    this.all=this.all.filter(function (val) {
+                        if(val.id==id){
+                            val.status=0
+                        }
+                        return val;
+                    })
+                }
+            },
+            changeState:function (state) {
+                this.state=state;
+            },
+            del:function (id) {
+                    this.all=this.all.filter(function (val) {
+                        return val.id!=id;
+                    })
+            }
+        },
+        computed:{
+            datas:function () {
+                var that=this;
+                return this.all.filter(function (val) {
+                    if(that.state=="all"){
+                        return val;
+                    }else{
+                        return val.status==that.state;
+                    }
+                })
+            }
+        }
+    })
+</script>

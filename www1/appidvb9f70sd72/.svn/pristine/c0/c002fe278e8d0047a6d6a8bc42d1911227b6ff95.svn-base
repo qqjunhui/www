@@ -1,0 +1,50 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: think
+ * Date: 2017/5/16
+ * Time: 8:48
+ */
+include_once "public.php";
+$id = $_REQUEST['id'];
+$title = $_REQUEST['title'];
+$keywords=$_REQUEST['keywords'];
+$con = $_REQUEST['con'];
+$imgurl = $_REQUEST['imgurl'];
+$pos=$_REQUEST['pos'];
+$imgurl1=$_REQUEST['imgurl1'];
+$lid=$_REQUEST['lid'];
+if(!$imgurl) {
+    $imgurl = $imgurl1;
+}
+if($pos){
+    $pos=implode(',',$pos);
+}else{
+    $pos='';
+}
+
+//$sql="select * from list WHERE lid=$lid";
+//$result=$db->query($sql);
+//$row=$result->fetch_assoc();
+//var_dump($id,$pos,$title,$keywords,$con,$imgurl);
+//var_dump($row['cid'],$row['posid'],$row['ltitle'],$row['keywords'],$row['lcon'],$row['lthumb']);
+//if($row['cid']===$id&&$row['posid']===$pos&&$row['ltitle']===$title&&$row['keywords']===$keywords&&$row['lcon']===$con&&$row['imgurl']===$imgurl){
+//    $mess="内容已存在,请重新添加";
+//    $src = "addlisttable.php";
+//    include_once "login/index.html";
+//    exit();
+//}
+
+
+//var_dump($id,$title,$keywords,$pos,$con,$imgurl);
+$sql = "update list set cid=$id,posid='$pos',ltitle='$title',keywords='$keywords',lcon='$con',lthumb='$imgurl' WHERE lid=$lid";
+$result = $db->query($sql);
+//var_dump($result);
+if ($result) {
+    $mess = "修改成功";
+} else {
+    $mess = "修改失败";
+}
+$src = "addlisttable.php";
+include_once "login/index.html";
+?>

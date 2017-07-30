@@ -1,0 +1,39 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}mycss/c-xq.css">
+<script src="{JS_PATH}myjs/cycle.js"></script>
+<div style="height:440px" >
+    <div class="z-banner">
+        <a class="first-two tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="diandian">
+            <div class="first-one changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+        </a>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="c-crumbs">
+            {pc:content action="position"; posid="14"; order="listorder ASC"; moreinfo="1";}
+            <p class="c-pan"><a href="{siteurl($siteid)}">首页</a> <span> &gt; </span> {catpos($catid)} 主要展示企业医疗设备或先进的医疗技术</p>
+            {/pc}
+        </div>
+        {pc:content  action="lists" siteid="$siteid" catid="$catid" order="listorder ASC" num="25" moreinfo="1"}
+        {$content}
+        {/pc}
+<div class="c-page">
+    <div class="page-left"><strong>上一篇：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a></div>
+    <div class="page-right"><strong>下一篇：</strong><a href="{$next_page[url]}">{$next_page[title]}</a></div>
+</div>
+<div class="mem col-lg-12  col-sm-12"><span>那些回忆，值得细细品尝回味。</span>
+    <p>Those memories, it is worth savoring the aftertaste</p>
+    <p>With the wireless</p>
+</div>
+</div>
+</div>
+{template "content","footer"}

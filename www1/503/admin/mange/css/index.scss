@@ -1,0 +1,189 @@
+header{
+    height:80px;
+    width:100%;
+    background: #0083BF;
+    div.logo{
+        height:80px;
+        width:90px;
+        background-image:url(../image/logo.png);
+        background-size:contain ;
+        float: left;
+        margin:{
+           left:23px;
+           right: 23px;
+        }
+//      border:{
+//          right:1px solid #fff;
+//      }
+    }
+    div.top{
+        padding: 16px 0 0 6px;
+        height: 21px;
+        color:#fff;
+        span.gang{
+            color: #C2C2C2;
+            padding: 0 4px;
+        }
+        p.top-l{
+            float: left;
+        }
+        div.top-r{
+            float: right;
+            position: relative;
+        }
+        a{
+            color: #fff;
+            font-size: 12px;
+        }
+    }
+    ul.top-two{
+        display: block;
+        height: 34px;
+        position: relative;
+        bottom: -10px;
+        right:0;
+        color:#fff;
+        li{
+            background-position: right top; 
+            padding: 0 15px 0 7px;
+            background-image: url(../image/nav_bg.png);
+            background-size:auto 214% ;
+            height: 34px;
+            width:auto;
+            float: left;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: 700;
+            width:60px;
+            text-align: center;
+            margin:{
+                left:10px;
+            }
+        }
+        li.first{
+            background-position-y:34px;
+            color:#3A6EA5;
+            background-size: auto 225%;
+        }
+    }
+}
+section.main{
+    width:100%;
+    height:531px;
+    div.left-m{
+        width: 10.7%;
+        height:580px;
+        position: relative;
+        display: block;
+        padding-top: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        background:#F7FBFC;
+        float: left;
+        div{
+            margin-top:10px;
+            position: absolute;;
+            top:0;
+            left:12px;
+            display: none;
+            dt{
+                font-weight: 700;
+                color: #275d96;
+                border-bottom: 1px solid #d9e4ea;
+                line-height: 24px;
+                height: 24px;
+                width:135px;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+                position: relative;
+                div{
+                    text-decoration: none;
+                    margin-right: 6px;
+                    cursor: pointer;
+                    display: block;
+                    margin-left:90px;
+                    float: right;
+                    border:6px solid #F7FBFC;
+                    border-top: 6px solid #B3C4C3;
+                    margin-top: 8px;
+                }
+                div.click{
+                    border:8px solid #F7FBFC;
+                    border-left: 8px solid #B3C4C3;
+                }
+            }
+            dd{
+                line-height: 30px;
+                padding-left: 8px;
+                display: block;
+                text-decoration: none;
+                font-size: 14px;
+                width:100px;
+                height:30px;
+                a{
+                    display: block;
+                    width:100%;
+                    height:100%;
+                }
+            }
+            dd.down-btn{
+                background-image: url(../image/left_menu.png) ;
+                padding-left: 24px;
+                width:110px;
+            }
+            dd.bg:hover{
+                background:#E2E9EA;
+            }
+        }
+        div.first{
+            display: block
+        }
+    }
+    
+    div.right-m{
+        width:89.3%;;
+        height:580px;
+        background: #E2E9EA;
+        float: left;
+        div.center{
+            width:2%;
+            height:531px;
+            float: left;
+            margin-right: 4px;
+            div{
+                margin-top:265px;
+                border:6px solid #E2E9EA;
+                border-right: 6px solid #75736E;
+            }
+        }
+        .crumbs{
+            padding-top:16px;
+            box-sizing: border-box;
+            span{
+                float: left;
+                font-size: 12px;
+            }
+            a{
+                float: right;
+                width:52px;
+                height:20px;
+                font-size: 12px;
+                text-align: center;
+                display: block;
+                background: #fff;
+                color:#000;
+                line-height: 24px;
+                border: 1px solid #CCCDD7;
+                border-radius: 5px;
+                margin:{
+                    right:6px;
+                    bottom: 6px;
+                } 
+            }
+        }
+        iframe{
+            float: left;
+        }
+    }
+}
+

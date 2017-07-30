@@ -1,0 +1,74 @@
+{template "content","header"}
+<link rel="stylesheet" href="{CSS_PATH}mycss/c-xwdt.css">
+<script src="{JS_PATH}myjs/cycle.js"></script>
+<script src="{JS_PATH}myjs/c-xwdt.js"></script>
+
+<div style="height:400px">
+    <div class="z-banner">
+        <a class="first-two tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="tutu"></a>
+        <a class="diandian">
+            <div class="first-one changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+            <div class="changtiao"></div>
+        </a>
+    </div>
+</div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class=" col-sm-12 col-lg-12 c-title">
+            <p>The current dynamic news</p>
+            <img src="{IMG_PATH}img/xw9.PNG" alt="">
+            <p>Attention all the time</p>
+        </div>
+        <ul class="  col-sm-12 col-lg-10 col-lg-push-1 c-item-list">
+            {pc:content  action="lists" siteid="$siteid" catid="$catid" order="listorder ASC" num="6" moreinfo="1" page="$page"}
+            {loop $data $v}
+                <li class="c-item">
+                    <a href="{$v[url]}">
+                        <div class="imgbox col-md-5 col-sm-5 col-xs-12">
+                            <img src="{$v[thumb]}">
+                        </div>
+                        <div class="c-item-cont col-md-7 col-sm-7">
+                            <div class="c-author">
+                                <span>{$v[keywords]}</span>
+                                <span>{$v[time]}</span>
+                            </div>
+                            <p class="c-item-title">
+                                {$v[title]}
+                                <span class="c-time">{$v[time]}</span>
+                            </p>
+                            <p class="c-item-text">
+                                {$v[description]}
+                            </p>
+                            <p class="c-item-english">
+                                {$v[english]}
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            {/loop}
+
+        </ul>
+        <div class="c-foot col-lg-12 col-sm-12">
+            <a href="">
+                <img src="{IMG_PATH}img/xws.PNG" alt="">
+            </a>
+        </div>
+        <div class="page  col-lg-6 col-lg-push-3 col-md-6 col-md-push-3 col-sm-8 col-sm-push-2">
+           {$pages}
+        </div>
+        {/pc}
+        <div class="mem col-lg-12  col-sm-12">
+            <span>那些回忆，值得细细品尝回味。</span>
+            <p>Those memories, it is worth savoring the aftertaste</p>
+            <p>With the wireless</p>
+        </div>
+    </div>
+</div>
+{template "content","footer"}

@@ -1,0 +1,216 @@
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<meta name="viewport"-->
+          <!--content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <!--<title>Document</title>-->
+    <!--<script src="angular.min.js"></script>-->
+    <!--<link rel="stylesheet" href="bootstrap.min.css">-->
+<!--</head>-->
+<!--<style>-->
+    <!--th,td{-->
+        <!--text-align: center;-->
+    <!--}-->
+<!--</style>-->
+<!--<body ng-app="qqapp">-->
+<!--<div ng-controller="ctrl">-->
+    <!--<div class="input-group" style="width: 300px;">-->
+        <!--<div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>-->
+        <!--<input type="text" class="form-control input-medium search-query" ng-model="search">-->
+    <!--</div>-->
+    <!--<table class="table table-striped">-->
+        <!--<tr>-->
+            <!--<th>商品编号</th>-->
+            <!--<th>商品名称</th>-->
+            <!--<th>商品单价 <span class="{{type}}dropup" ng-click="order()"><span class="caret"></span></span></th>-->
+            <!--<th>商品数量</th>-->
+            <!--<th>商品总价</th>-->
+            <!--<th>操作</th>-->
+        <!--</tr>-->
+        <!--<tr ng-repeat="item in data| filter:search | orderBy:type+attr">-->
+            <!--<td>{{item.id}}</td>-->
+            <!--<td>{{item.name}}</td>-->
+            <!--<td>{{item.price}}</td>-->
+            <!--<td>-->
+                <!--<div class="input-group" style="width:120px;">-->
+                    <!--&lt;!&ndash;<button ng-click="reduce($index)">-</button>&ndash;&gt;-->
+                    <!--<div class="input-group-addon" ng-click="add($index)">+</div>-->
+                    <!--<input type="text" class="form-control" id="exampleInputAmount" ng-model="item.num" placeholder="请输入大于0的数"  ng-change="change($index)">-->
+                    <!--<div class="input-group-addon"  ng-click="delnum($index)">-</div>-->
+                <!--</div>-->
+            <!--</td>-->
+            <!--<td>{{item.price*item.num}}</td>-->
+            <!--<td><button type="button" class="btn btn-warning" ng-click="del(item.id)">删除</button></td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td colspan="6" ng-show="data.length==0">没有任何商品</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td>商品总数</td>-->
+            <!--<td>{{getNum()}}</td>-->
+            <!--<td>商品总价</td>-->
+            <!--<td>{{getPrice()}}</td>-->
+            <!--<td colspan="2"><button type="button" class="btn btn-warning" ng-click="clear()">清空购物车</button></td>-->
+        <!--</tr>-->
+    <!--</table>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+<!--<script>-->
+    <!--angular.module('qqapp',[])-->
+        <!--.controller('ctrl',function($scope){-->
+           <!--$scope.data=[-->
+               <!--{-->
+                   <!--id:1,-->
+                   <!--name:"上衣",-->
+                   <!--price:20,-->
+                   <!--num:1,-->
+               <!--},-->
+               <!--{-->
+                   <!--id:2,-->
+                   <!--name:"帽子",-->
+                   <!--price:10,-->
+                   <!--num:1,-->
+               <!--},-->
+               <!--{-->
+                   <!--id:3,-->
+                   <!--name:"裤子",-->
+                   <!--price:40,-->
+                   <!--num:1,-->
+               <!--},-->
+               <!--{-->
+                   <!--id:4,-->
+                   <!--name:"鞋子",-->
+                   <!--price:30,-->
+                   <!--num:1,-->
+               <!--},-->
+               <!--];-->
+           <!--$scope.getNum=function(){-->
+                <!--let num=0;-->
+                <!--angular.forEach($scope.data,function(value){-->
+                    <!--num+=value.num;-->
+                <!--})-->
+                <!--return num;-->
+            <!--};-->
+            <!--$scope.getPrice=function(){-->
+                <!--let price=0;-->
+                <!--angular.forEach($scope.data,function(value){-->
+                    <!--price+=value.num*value.price;-->
+                <!--})-->
+                <!--return price;-->
+            <!--};-->
+            <!--$scope.del=function(i){-->
+                <!--angular.forEach($scope.data,function(value,key){-->
+                    <!--if(i==value.id){-->
+                        <!--$scope.data.splice(key,1);-->
+                    <!--}-->
+                <!--})-->
+
+            <!--}-->
+            <!--$scope.clear=function(){-->
+                <!--$scope.data=[];-->
+            <!--}-->
+            <!--$scope.add=function (index) {-->
+                <!--$scope.data[index].num++;-->
+            <!--}-->
+
+
+            <!--$scope.delnum=function (index) {-->
+                <!--if($scope.data[index].num>1){-->
+                    <!--$scope.data[index].num&#45;&#45;;-->
+                <!--}else{-->
+                    <!--$scope.remove(index);-->
+                <!--}-->
+            <!--}-->
+            <!--$scope.remove=function(index){-->
+                <!--if(confirm('确定移除此项吗？')){-->
+                    <!--$scope.data.splice(index,1);-->
+                <!--}-->
+            <!--};-->
+            <!--$scope.change=function(index){-->
+                <!--if($scope.data[index].num>=1){-->
+                <!--}else{-->
+                    <!--$scope.data[index].num=1;-->
+                <!--}-->
+            <!--};-->
+            <!--$scope.attr="";-->
+            <!--$scope.type="";-->
+            <!--$scope.order=function () {-->
+                <!--$scope.attr="price";-->
+                <!--if($scope.type=="-"){-->
+                    <!--$scope.type="";-->
+                <!--}else{-->
+                    <!--$scope.type="-";-->
+                <!--}-->
+            <!--}-->
+
+        <!--})-->
+
+<!--</script>-->
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body ng-controller="app">
+<table>
+    <tr>
+        <td ng-click="sort('name')">姓名</td>
+        <td ng-click="sort('age')">年龄</td>
+    </tr>
+    <tr ng-repeat="arr1 in arr1">
+        <td>{{arr1.name}}</td>
+        <td>{{arr1.age}}</td>
+    </tr>
+</table>
+
+<input id="wei" type="text" ng-focus="concentrate()" >
+<input  type="button" ng-click="search()" value="搜索">
+</body>
+<script src="angular.min.js"></script>
+<!--<script src="jquery.js"></script>-->
+<script>
+    // var wei = document.getElementById("wei");
+    // console.log(wei);
+    // setTimeout(function(){
+    //  $("#wei").attr("disabled",false);
+    // },3000);
+    var m=angular.module("myApp",[]);
+    m.controller("app",["$scope","$filter",function($scope,$filter){
+        var arr=[
+            {"name":"猪","age":20},
+            {"name":"小猪","age":23},
+            {"name":"大猫","age":227},
+            {"name":"老虎","age":29},
+            {"name":"中虎","age":29},
+            {"name":"老虎","age":39},
+            {"name":"老猫","age":47},
+            {"name":"熊猫","age":29},
+            {"name":"树懒","age":27},
+            {"name":"狮子","age":59}
+        ];
+        $scope.arr1=arr;
+        //实现查询功能
+        var isopen=true;
+        $scope.sort=function(str){
+            $scope.arr1=$filter("orderBy")($scope.arr1,str,isopen);
+            isopen=!isopen;
+            //console.log(isopen);
+        };
+        $scope.concentrate=function(){
+            console.log("已聚焦");
+        }
+        //实现查询功能
+        $scope.search=function(){
+            $scope.arr1=$filter("filter")(arr,document.getElementById("wei").value);
+            console.log($scope.arr1);
+        }
+
+    }]);
+</script>
+</html>

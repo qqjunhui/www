@@ -1,0 +1,23 @@
+	body,p,pre,ul,ol,dd,dt,dl,h1,h2,h3,h4,h5,h6,form,input,li,iframe{
+		margin:0;
+		padding:0;	}
+	ul,dl,ol{
+		list-style:none;
+	}
+	a{
+		text-decoration:none;
+		color:#000;
+	}
+	img{
+		border:none;
+	}
+	h1,h2,h3,h4,h5,h6{
+			font-weight:normal;
+	}
+	input{
+		border:0;
+	}
+	*{
+		font-family: "微软雅黑";
+		font-size: 12px;
+	}

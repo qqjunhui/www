@@ -1,0 +1,90 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: think
+ * Date: 2017/6/18
+ * Time: 22:19
+ */
+session_start();
+header("content-type:text/html;charset=utf8");
+if(!isset($_SESSION["memberlogin"])){
+    echo "<script>alert('请登陆');location.href='login.php'</script>";
+    exit();
+}
+
+include "../admin/public1.php";
+$sql="select * from message WHERE mid=".$_SESSION['mid'];
+$result=$db->query($sql);
+?>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../static/js/jquery.js"></script>
+    <link rel="stylesheet" href="../static/css/mui.min.css">
+    <script>
+window.onload=function(){
+    document.querySelector(".back").onclick=function () {
+        history.back();
+    }
+        }
+    </script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon mui-icon-left-nav mui-pull-left back"></a>
+    <h1 class="mui-title">
+查看留言
+    </h1>
+</header>
+<ul>
+    <?php
+    while ($info=$result->fetch_assoc()) {
+    ?>
+    <li class="mui-table-view-cell" style="position: relative">
+        <a href="show.php?sid=<?php
+        $sql1="select ltitle,lid from list WHERE lid=".$info['lid'];
+        $result1=$db->query($sql1);
+        $row=$result1->fetch_assoc(); echo $row['lid']?>">
+            <h4 class="user" style="margin:10px 0;">
+                <?php
+                echo $row['ltitle'];
+                ?></h4>
+            <div class="con">
+                <?php
+                echo $info["con"];
+                ?>
+            </div>
+            <div class="time" style="text-align:right;color:#aaa"><?php
+                echo $info["time"];
+                ?></div>
+        </a>
+    </li>
+
+    <?php
+    }
+    ?>
+</ul>
+<style>
+    *{
+        list-style: none;
+    }
+    body{
+        background: #fff;
+    }
+    ul{
+        margin-top:44px;
+        padding:0;
+    }
+    li{
+        border-bottom: 1px solid #ccc;
+    }
+    .mui-table-view-cell:after{
+        background-color: #fff;
+    }
+</style>
+</body>
+</html>

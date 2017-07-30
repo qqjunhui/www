@@ -1,0 +1,16 @@
+[
+  {
+    "type":{
+      ".css": "text/css",
+      ".gif": "image/gif",
+      ".html": "text/html",
+      ".jpeg": "image/jpeg",
+      ".jpg": "image/jpeg",
+      ".png": "image/png",
+      ".js": "application/x-javascript"
+    },
+    "index":"index.html",
+    "root":"www"
+
+  }
+]

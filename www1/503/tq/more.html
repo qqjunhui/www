@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../jquery.js'></script>
+	</head>
+	<style>
+		table{
+			width:800px;
+			height:100px;
+			margin:0 auto;
+			text-align: center;
+		}
+	</style>
+	<body>
+		
+	</body>
+</html>
+<script>
+	if(localStorage.city){
+		$.ajax({
+			url:'https://free-api.heweather.com/v5/weather?city='+localStorage.city+'&key=f294afe424014abbb08aeef60ae152ed',
+			success:function(val){
+				let dz='http://files.heweather.com/cond_icon/'+val['HeWeather5'][0].now.cond.code+'.png';
+				console.log(val['HeWeather5'][0])
+				$('<table border="1" cellpadding="0" cellspacing="0">').html(`
+					<tr><th>国家</th><th>城市</th><th>天气情况</th><th>温度</th><br/></tr>
+					<tr><td>${val['HeWeather5'][0].basic.cnty}</td>
+					<td>${val['HeWeather5'][0].basic.city}</td>
+					<td>${val['HeWeather5'][0].now.cond.txt}<img src=${dz} width=30></td>
+					<td>${val['HeWeather5'][0].now.tmp}℃</td></tr>
+				`).appendTo('body')
+			}
+		})
+	}
+	
+</script>

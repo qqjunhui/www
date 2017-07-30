@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.z-banner {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  top: 0;
+  left: 0; }
+
+.z-banner .tutu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.z-banner .tutu .qbanner1 {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+.z-banner .tutu:nth-child(1){
+  background-position: center center;
+  background-size: cover;
+  background-image: url("../../images/img/z-l-pb.png");
+}
+.z-banner .tutu:nth-child(2){
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../images/img/qbanner2.png");
+}
+.z-banner .tutu:nth-child(3){
+  background-position: center center;
+  background-size: cover;
+  background-image: url("../../images/img/qbanner3.png");
+}
+.z-banner .tutu:nth-child(4){
+  background-position: center center;
+  background-size: cover;
+  background-image: url("../../images/img/qbanner4.png");
+}
+.z-banner .first-two {
+  opacity: 1; }
+.diandian {
+  width: 164px;
+  height: 6px;
+  position: absolute;
+  left: 50%;
+  margin-left: -82px;
+  bottom: 33px; }
+
+.diandian .changtiao {
+  width: 31px;
+  height: 100%;
+  float: left;
+  margin-right: 10px;
+  box-sizing: border-box;
+  border: 1px solid #b9b9b9; }
+
+.diandian .first-one {
+  background: white;
+  border: 0; }
+.z-banner2 {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  top: 0;
+  left: 0; }
+
+.z-banner2 .tutu2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  width: 100%;
+  height: 100%;
+  display: block; }
+
+.z-banner2 .tutu2 .qbanner2 {
+  width: 100%;
+  display: block;
+  height: 100%;
+}
+.z-banner2 .tutu2:nth-child(1){
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../images/img/z-l-p.png");
+}
+.z-banner2 .tutu2:nth-child(2){
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../images/img/z-l-p.png");
+}
+.z-banner2 .tutu2:nth-child(3){
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../images/img/z-l-p.png");
+}
+.z-banner2 .tutu2:nth-child(4){
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../images/img/z-l-p.png");
+}
+.z-banner2 .first-two {
+  opacity: 1; }
+.diandian2 {
+  width: 164px;
+  height: 6px;
+  position: absolute;
+  left: 50%;
+  margin-left: -82px;
+  bottom: 33px; }
+
+.diandian2 .changtiao2 {
+  width: 31px;
+  height: 100%;
+  float: left;
+  margin-right: 10px;
+  box-sizing: border-box;
+  border: 1px solid #b9b9b9; }
+
+.diandian2 .first-one {
+  background: white;
+  border: 0; }
+/*����*/
+/**/
+
+.container > .row > .aa {
+  height: 110px;
+  background: #fff;
+  text-align: center;
+}
+
+.container > .row > .aa .bb {
+  font-size: 14px;
+  color: #6d6d6d;
+  line-height: 5px;
+}
+
+.container > .row > .aa .l-c {
+  font-size: 20px;
+}
+
+.container > .row > .aa .l-cc {
+  width: 30%;
+  height: 1px;
+  background: #DEDEDE;
+  margin: 0 auto;
+}
+
+.container > .row > .aa .l-cc .cs {
+  width: 20%;
+  height: 2px;
+  background: #AE8E71;
+  margin: 0 auto;
+}
+
+.container > .row > .aa .l-s {
+  font-size: 5px;
+  margin-top: 10px;
+  color: #949494;
+}
+
+.container > .row > .abc {
+  height: 50px;
+  margin-top: 40px;
+}
+
+.container > .row > .abc .ljb-25 {
+  width: 100%;
+  height: 50px;
+}
+
+.container > .row > .abc .ljb-25 img {
+  width: 100%;
+}
+
+.container > .row > .abp {
+  height: 50px;
+  margin-top: 70px;
+  text-align: center;
+  line-height: 40px;
+}
+
+.container > .row > .abp .th {
+  font-size: 20px;
+  color: #685448;
+}
+
+.container > .row > .ll {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.container > .row > .ll p {
+  margin-top: 25px;
+}
+
+.container > .row > .poi {
+  margin-bottom: 20px;
+}
+
+.container > .row > .poi p {
+  margin-top: 25px;
+  text-align: justify;
+}
+
+.container > .row > .img {
+  height: 400px;
+  margin: 0 auto;
+}
+
+.container > .row > .img .ljb_img {
+  width: 100%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.container > .row > .img .ljb_img img {
+  width: 100%;
+  height: 100%;
+}
+
+.container > .row > .w {
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  margin-top: 50px;
+  margin-bottom: 250px;
+}
+
+.container > .row > .w p {
+  font-size: 12px;
+  color: #A1A1A1;
+}

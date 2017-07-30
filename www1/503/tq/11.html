@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src='../jquery.js'></script>
+	</head>
+	<style>
+		input{
+			width:400px;
+			height:40px;
+			font-size: 18px;
+			position: fixed;
+			top:50px;
+			right:50px;
+		}
+		li{
+			font-size: 18px;
+			color:#000;
+		}
+	</style>
+	<body>
+		<ul>
+			
+		</ul>
+		<input type="text" placeholder='请输入城市拼音或中文'/>
+	</body>
+</html>
+<script type="text/javascript">
+//	$.ajax({
+//		url:'https://free-api.heweather.com/v5/weather?city=太原&key=f294afe424014abbb08aeef60ae152ed',
+//		success:function(val){
+//			console.log(val['HeWeather5'][0])
+//		}
+//	})
+	$.getJSON('22.php').done(function(val){
+		val.forEach(function(value,index){
+			$('<li>').html(value.cityZh).attr('city',value.cityZh).appendTo('ul');
+		})
+		$('input').keyup(function(){
+			let arr=[];
+			let aa=this.value;
+			arr=val.filter(function(value,index){
+				return value.cityEn.includes(aa)||value.cityZh.includes(aa);
+			})
+			$('ul').empty();
+			arr.forEach(function(value,index){
+				
+				$('<li>').html(value.cityZh).attr('city',value.cityZh).appendTo('ul');
+			})
+		})
+		$('ul').on('click','li',function(){
+			localStorage.city=$(this).attr('city');
+			location.href='more.html';
+		})
+	})
+	
+</script>
